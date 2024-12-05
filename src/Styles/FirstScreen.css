@@ -1,0 +1,34 @@
+/* Ensure the HTML and body take up the full height of the viewport */
+html, body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Main app container to span full height */
+  .App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* First screen content fills available space */
+  .first-screen {
+    flex: 1; /* Ensures the main content grows and pushes the footer down */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Footer is styled globally (already in Footer component) */
+  footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  

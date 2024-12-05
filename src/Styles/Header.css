@@ -1,0 +1,14 @@
+.header {
+    background-color: #003366;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+  

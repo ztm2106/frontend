@@ -1,0 +1,45 @@
+.create-account {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  form {
+    display: flex;
+    margin: 20px auto;
+    display: inline-block;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    display: flex;
+    min-width: 20rem;
+    margin-bottom: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+/* Add styling for the specific button */
+.button_create {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .button_create:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+  }
+  
+  
+  
