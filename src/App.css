@@ -1,21 +1,49 @@
-html, body {
+/* Global Reset */
+* {
   margin: 0;
-  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* HTML and Body Setup */
+html, body {
+  margin: 0;
+  height: 100%; /* Ensure full height of the viewport */
+  font-family: Arial, sans-serif; /* Set a clean, readable font */
+}
+
+/* App Container */
 .App {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure the container spans the full height of the viewport */
+  min-height: 100vh; /* Ensure the app spans the full height of the viewport */
 }
 
+/* Main Content */
 main {
-  flex: 1;
+  flex: 1; /* Allow main content to expand and push footer down */
+  padding: 20px; /* Add some padding for content */
+  background-color: #f4f4f4; /* Light background for the main content area */
 }
 
+/* Footer */
 footer {
-  background-color: #003366;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
+  background-color: #003366; /* Dark blue background for footer */
+  color: white; /* White text color */
+  text-align: center; /* Center-align footer content */
+  padding: 10px 0; /* Vertical padding for spacing */
+  font-size: 14px; /* Adjust font size */
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Footer Links */
+footer a {
+  color: white; /* Links in footer have white color */
+  text-decoration: none; /* Remove underline from links */
+  margin: 0 5px; /* Add horizontal spacing between links */
+  font-weight: 500; /* Slightly bolden the links */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Add underline on hover for links */
 }

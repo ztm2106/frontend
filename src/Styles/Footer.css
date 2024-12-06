@@ -1,14 +1,24 @@
+/* Footer Styling */
 .footer {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-  }
-  
-  .footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 5px;
-  }
-  
+  background-color: #003366; /* Dark blue background */
+  color: white; /* White text color */
+  text-align: center; /* Center-align footer content */
+  padding: 10px 0; /* Add vertical padding */
+  font-size: 14px; /* Adjust the font size */
+  width: 100%; /* Ensure the footer spans the full width */
+  position: fixed; /* Make the footer sticky */
+  bottom: 0; /* Stick the footer to the bottom of the viewport */
+  left: 0; /* Align footer to the left */
+  z-index: 100; /* Ensure the footer is above other content */
+}
+
+.footer a {
+  color: white; /* Footer links in white */
+  text-decoration: none; /* Remove underline from links */
+  margin: 0 5px; /* Add spacing between links */
+  font-weight: 500; /* Slightly bolden the links */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}

@@ -1,14 +1,45 @@
+/* Styles/Header.css */
 .header {
-    background-color: #003366;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-  
-  .nav a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-  }
-  
+  background-color: #004b8d; /* Matching blue color */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8em; /* Larger text for logo */
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 30px; /* Space out links */
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column; /* Stack icon and text vertically */
+  align-items: center; /* Center-align icon and text */
+  text-decoration: none;
+  color: white;
+  font-size: 0.9em; /* Standardize font size */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link .icon {
+  font-size: 1.5em; /* Larger icons for better visibility */
+  margin-bottom: 5px; /* Add space between icon and text */
+}
+
+.nav-link:hover {
+  color: #ffcc00; /* Golden color on hover */
+}

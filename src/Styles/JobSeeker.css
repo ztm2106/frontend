@@ -1,0 +1,143 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure the JobSeeker Page Fills the Screen */
+  .job-seeker-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure it spans the full viewport height */
+  }
+  
+  /* Content Container */
+  .job-seeker-container {
+    flex: 1; /* Allow the content to grow and push the footer down */
+    padding-bottom: 20px; /* Add space at the bottom */
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #d9e7f7;
+  }
+  
+  .profile-pic {
+    width: 150px; /* Set fixed width */
+    height: 150px; /* Set fixed height to match width */
+    object-fit: cover; /* Ensures the image fits within the square */
+    margin-right: 20px;
+    border: 2px solid black; /* Add a black border */
+  }
+  
+  .profile-details {
+    margin-top: 70px;
+    flex: 1;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative; /* Allow positioning adjustments */
+    right: 700px; /* Move the search bar 200px to the left */
+    top: 60px
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  .search-bar button {
+    padding: 5px;
+    background-color: transparent; /* Makes the background transparent */
+    color: inherit; /* Ensures the text or icon inherits the parent's color */
+    border: none; /* Removes the border */
+    cursor: pointer; /* Keeps the cursor as a pointer */
+    font-size: 20px;
+  }
+  
+  
+  
+  /* Jobs Section */
+  .jobs {
+    flex: 1; /* Ensure it spans the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white; /* Blue background */
+    color: white; /* Ensure text is visible */
+    padding: 20px;
+  }
+  
+  .jobs-header {
+    text-align: center;
+    background-color: #d9e7f7; /* Slightly darker blue for the header */
+    padding: 20px 0 30px;
+    border-radius: 5px;
+  }
+
+  .jobs-header h2 {
+    text-align: center;
+    background-color: #d9e7f7; /* Slightly darker blue for the header */
+    font-size: 30px;
+  }
+  
+  .job-list {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    gap: 15px; /* Space between grid items */
+    margin-top: 20px;
+  }
+  
+.job-card {
+  display: flex; /* Enables a two-column layout */
+  flex-direction: row; /* Ensures horizontal alignment */
+  justify-content: space-between; /* Adds spacing between columns */
+  align-items: center; /* Aligns content vertically */
+  background-color: #0073e6; /* Lighter blue for job cards */
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  gap: 20px; /* Adds space between the two columns */
+}
+
+.job-details {
+  flex: 1; /* Takes up 50% of the width */
+  display: flex;
+  flex-direction: column; /* Stacks details vertically */
+  justify-content: center; /* Centers content vertically */
+}
+
+.job-poster {
+    display: flex; /* Enables a two-column layout */
+    flex-direction: row; /* Ensures horizontal alignment */
+    justify-content: space-between; /* Adds spacing between columns */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    text-align: center; /* Ensures text is center-aligned */
+    margin-right: 5px;
+}
+
+.job-poster2 p {
+    display: flex; /* Enables a two-column layout */
+    flex-direction: column; /* Ensures horizontal alignment */
+    justify-content: space-between; /* Adds spacing between columns */
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+    text-align: center; /* Ensures text is center-aligned */
+  }
+  
+  
+  .poster-pic {
+    width: 100px; /* Set fixed width */
+    height: 100px; /* Set fixed height to match width */
+    object-fit: cover; /* Ensures the image fits within the square */
+    margin-left: 25px;
+    border: 2px solid black; /* Add a black border */
+  }
+  
