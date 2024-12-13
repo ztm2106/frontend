@@ -18,13 +18,13 @@ function Header() {
           <FaSignInAlt className="icon" />
           <span>Log In</span>
         </Link>
-        <a href="#chat" className="nav-link">
+        <Link to="/chat" className="nav-link"> {/* Update this link */}
           <FaComments className="icon" />
           <span>Chat</span>
-        </a>
-        <Link to="/post-job" className="nav-link">
+        </Link>
+        <Link to="/postjob" className="nav-link">
           <FaFlag className="icon" />
-          <span>Post/Find Job</span>
+          <span>Post Job</span>
         </Link>
         <Link to="/jobseeker" className="nav-link">
           <FaStar className="icon" />
