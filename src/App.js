@@ -11,51 +11,33 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'; // Ensure the global styles are imported
 
 function App() {
-  const [jobs, setJobs] = useState(() => {
-    // Load jobs from localStorage or initialize with default jobs
-    const savedJobs = localStorage.getItem('jobList');
-    return savedJobs
-      ? JSON.parse(savedJobs)
-      : [
-          {
-            id: 1,
-            title: 'Clean Up Room',
-            description: 'Help clean my room, it’s so messy!',
-            date: '2024-12-15',
-            time: '10:00 AM',
-            location: 'East Campus Dorm',
-            price: '$20',
-            poster: {
-              name: 'Chris M. Sr (CC)',
-              rating: 3.5,
-              image: 'poster1-placeholder.jpg',
-            },
-          },
-          {
-            id: 2,
-            title: 'Pick Up Food',
-            description: 'Please pick up food at Ferris for me!',
-            date: '2024-12-16',
-            time: '12:00 PM',
-            location: 'Ferris Booth Commons',
-            price: '$15',
-            poster: {
-              name: 'Stephanie R. Fr (GS)',
-              rating: 3.9,
-              image: 'poster2-placeholder.jpg',
-            },
-          },
-          // Additional default jobs can go here...
-        ];
-  });
+  const [jobs, setJobs] = useState([]);
 
-  // Save jobs to localStorage whenever they change
+  // Fetch jobs from Flask backend
   useEffect(() => {
-    localStorage.setItem('jobList', JSON.stringify(jobs));
-  }, [jobs]);
+    fetch('http://127.0.0.1:5000/jobs')
+      .then((response) => response.json())
+      .then((data) => setJobs(data))
+      .catch((error) => console.error('Error fetching jobs:', error));
+  }, []);
 
   const handleNewJob = (newJob) => {
-    setJobs((prevJobs) => [newJob, ...prevJobs]);
+    fetch('http://127.0.0.1:5000/jobs', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newJob)
+    })
+      .then((response) => response.json())
+      .then((data) => setJobs((prevJobs) => [data, ...prevJobs]))
+      .catch((error) => console.error('Error adding job:', error));
+  };
+
+  const handleRemoveJob = (id) => {
+    fetch(`http://127.0.0.1:5000/jobs/${id}`, {
+      method: 'DELETE'
+    })
+      .then(() => setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id)))
+      .catch((error) => console.error('Error deleting job:', error));
   };
 
   return (
@@ -66,9 +48,9 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/FirstScreen" element={<FirstScreen />} />
           <Route path="/create-account" element={<CreateAccount />} />
-          <Route path="/jobseeker" element={<JobSeeker jobs={jobs} />} />
+          <Route path="/jobseeker" element={<JobSeeker jobs={jobs} onRemoveJob={handleRemoveJob} />} />
           <Route path="/postjob" element={<PostJob onNewJob={handleNewJob} />} />
-          <Route path="/chat" element={<Chat />} /> {/* Add Chat route */}
+          <Route path="/chat" element={<Chat />} />
         </Routes>
         <Footer />
       </div>
